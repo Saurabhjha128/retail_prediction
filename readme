@@ -1,0 +1,109 @@
+🛒 Retail Spend Prediction System
+
+A full-stack machine learning application that predicts future customer spend (30, 60, 90, 180 days) based on historical transaction behavior.
+Built with FastAPI + Streamlit + ML models.
+
+📌 Features
+
+📈 Predict customer spend for multiple future horizons
+⚡ FastAPI backend with REST endpoints
+🎨 Streamlit UI for interactive predictions
+🤖 Supports multiple ML models (Linear Regression & XGBoost)
+🧪 Swagger UI for API testing
+🚀 Hackathon & deployment ready
+
+retail_prediction/
+│
+├── app.py                  # FastAPI backend
+├── ui.py                   # Streamlit frontend
+├── README.md               # Project documentation
+│
+├── models/
+│   ├── LinearRegression_30d.joblib
+│   ├── XGBoost_60d.joblib
+│   ├── XGBoost_90d.joblib
+│   └── XGBoost_180d.joblib
+│
+├── requirements.txt
+
+
+Tech Stack
+
+Backend: FastAPI
+Frontend: Streamlit
+ML Models: Scikit-learn, XGBoost
+Data Handling: Pandas, NumPy
+Model Loading: Joblib
+
+📦 Installation & Setup
+1️⃣ Clone the repository
+git clone <repo-url>
+cd retail_prediction
+
+2️⃣ Create environment (recommended)
+conda create -n retail python=3.10
+conda activate retail
+
+3️⃣ Install dependencies
+pip install fastapi uvicorn streamlit pandas numpy scikit-learn joblib xgboost requests
+
+🚀 Running the Application
+▶️ Start FastAPI backend
+python -m uvicorn app:app --reload
+
+Backend runs at:
+http://127.0.0.1:8000
+
+Swagger API docs:
+http://127.0.0.1:8000/docs
+
+Start Streamlit UI (new terminal)
+streamlit run ui.py
+
+UI opens at:
+http://localhost:8501
+
+🔗 API Endpoints
+🔹 Home
+
+GET /
+Checks API status.
+Response:
+{
+  "message": "Retail Spend Prediction API is running"
+}
+
+🔹 Predict Spend
+
+POST /predict
+
+
+
+🧠 Feature Description
+Feature	Description
+spend_past_30d	Total spend in last 30 days
+orders_past_30d	Orders in last 30 days
+spend_past_60d	Total spend in last 60 days
+orders_past_60d	Orders in last 60 days
+spend_past_90d	Total spend in last 90 days
+orders_past_90d	Orders in last 90 days
+spend_past_180d	Total spend in last 180 days
+orders_past_180d	Orders in last 180 days
+recency_days	Days since last purchase
+
+🧪 Testing Order (Important)
+Open / → check API status
+Test /predict in /docs
+Run Streamlit UI
+Enter values → Predict
+
+👨‍💻 Authors
+Team Name: void
+Member:1.Saurabh Jha
+member:2.Dheeraj Kumar
+Member:3.Mukesh Kumar
+Built for: Data Science HCLTech Hackathon 
+
+📜 License
+
+This project is for educational and hackathon purposes.
